@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+</head>
+<style type="text/css">
+	
+	form 
+        {
+            width: 35%;
+            background: white ;
+            margin: auto ;
+            border: 5px solid black ;
+            border-radius: 15px;
+            box-sizing: border-box;
+            padding: 10px;
+            overflow:auto;
+            
+        }
+
+</style>
+<body>
+	<form action = "sendingMessage.php" id="myform" method="get" onsubmit="return f()"> 
+  	<fieldset>
+		<input type = text name = "FirstName" id = "FirstName" onblur = "f()" required>   First Name <br><br> 
+		<input type = text name = "LastName" id = "LastName" onblur = "f()"required>  Last Name<br><br>
+		<input type = text name = "Email" id = "Email" onblur = "f()"required>  Email <br><br>
+		<input type = text name = "Password" id = "Password" onblur = "f()"required>  password <br><br>
+		<input type = text name = "Password2" id = "Password2" onblur = "f()"required>  Re-enter password<br><br>
+		<input type = text name = "DOB" id = "DOB" onblur = "f()"required>  Date of Birth<br><br>
+    	<button type="submit"> Register </button><br>
+   	</fieldset>
+   	<br>
+	</form>
+	<br>
+</body>
+</html>
