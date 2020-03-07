@@ -1,4 +1,4 @@
-<?php
+s<?php
 require_once('/home/app-s/IT490/path.inc');
 require_once('/home/app-s/IT490/get_host_info.inc');
 require_once('/home/app-s/IT490/rabbitMQLib.inc');
@@ -34,7 +34,6 @@ else{
 	$msg = array("message"=>$myJSON,"type"=>"login");
 }
 
-m
 
 //$flag = false;
 
