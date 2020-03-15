@@ -1,0 +1,31 @@
+
+<!DOCTYPE html> <html> <head>
+	<title>Registration</title> </head>
+ <style type="text/css">
+	
+	form
+        {
+            width: 35%;
+            background: white ;
+            margin: auto ;
+            border: 5px solid black ;
+            border-radius: 15px;
+            box-sizing: border-box;
+            padding: 10px;
+            overflow:auto;
+            
+        }
+</style>
+ <body>
+	<form action = "Login.php" id="myform" method="post" onsubmit="return f()">
+  	<fieldset>
+		<input type = text name = "Username" id="Username" onlbue "f()" required> Username: <br><br>
+		<input type = text name = "Password" id = "Password" onblur = "f()"required> password <br><br>
+    		<button type="submit"> Login </button><br>
+   	</fieldset>
+   	<br>
+	</form>
+	<br>
+ </body>
+</html>
+

@@ -31,7 +31,7 @@ else{
 	$user->DOB =  $DOB;
 	$myJSON = json_encode($user);
        //$msg = array("message"=>"test message", "type"=>"echo");
-	$msg = array("message"=>$myJSON,"type"=>"login");
+	$msg = array("message"=>$myJSON,"type"=>"echo");
 }
 
 
