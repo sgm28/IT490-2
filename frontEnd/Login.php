@@ -1,4 +1,6 @@
-<?php require_once('/home/app-s/IT490/path.inc'); 
+<?php 
+#Sakar Michel
+require_once('/home/app-s/IT490/path.inc'); 
 require_once('/home/app-s/IT490/get_host_info.inc'); 
 require_once('/home/app-s/IT490/rabbitMQLib.inc'); 
 error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
