@@ -1,7 +1,7 @@
 # IT490-2
 Insomina Cookies
 
-<br>Summary</br>:
+<br>Summary:</br>
   A website were the user can view Facebook, Twitter, and Instagram all on one page.
 
 <br>How it works:</br>
