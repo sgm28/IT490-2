@@ -4,7 +4,7 @@ Insomina Cookies
 Summary:
   A website were the user can view Facebook, Twitter, and Instagram all on one page.
 
-How it works:
+<br>How it works:</br>
   The frontEnd folder is downloaded to /var/www/html/ directory on the application virtual machine.
   The backEnd folder is downloaded to database virtual machine.
   The RabbitMQ Virtual machine is started and running RabbitMQSever.
