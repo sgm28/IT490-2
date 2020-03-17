@@ -1,7 +1,7 @@
 # IT490-2
 Insomina Cookies
 
-Summary:
+<br>Summary</br>:
   A website were the user can view Facebook, Twitter, and Instagram all on one page.
 
 <br>How it works:</br>
@@ -30,7 +30,7 @@ Summary:
   sends data to MYSQL database. MySQL database response back with fail or success -> RabbitMQServerSample.php -> sends fail or success
   data back to RabbitMQServer -> RabbitMQServer sends data back to -> Register.php -> Displays the results.
 
-What it's supposed to do
+<br>What it's supposed to do</br>
   Display users Facebook, Twitter, Instagram on one page.
  
  
