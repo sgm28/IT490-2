@@ -29,8 +29,8 @@ The OG Insomnia Cookies
     <li>The user then goes to the login page:
       <i>Ex: 192.168.1.4/Login.html .</i></li>
     <li>The user fills out the require information and submits the application.</li>
-    <li>
-      <ol>The following takes place:<br>
+    <li>The following takes place:<br>
+      <ol>
         <li>Login.html runs the Login.php script.</li>
         <li>Login.php sends the input data to the RabbitMQ Server.</li>
         <li>RabbitMQ Server sends data to the RabbitMQServerSample.php script.</li>
