@@ -1,40 +1,53 @@
 # IT490-2
-Insomina Cookies
+The OG Insomnia Cookies
 
 <br>Summary:</br>
-  A website were the user can view Facebook, Twitter, and Instagram all on one page.
+  A website where the user can view Facebook, Twitter, and Instagram all on one page.
 
 <br>How it works:</br>
-  The frontEnd folder is downloaded to /var/www/html/ directory on the application virtual machine.
-  The backEnd folder is downloaded to database virtual machine.
-  The RabbitMQ Virtual machine is started and running RabbitMQSever.
-  The RabbitMQSereverSample.php is execute (php RabbitMQServerSample.php).
-  Appache webserver is started.
-  The user types the ip address of the apache webserver follow by /Register.html .
-  Ex: 192.168.1.4/Register.html .
-  The user fills out the require information and submits the application.
-  The following takes place:
-
-  Register.html -> Register.php -> send data to RabbitMQServer -> RabbitMQServer send data to -> RabbitMQServerSample.php -> sends data to
-  MySQL database.
-
-  MySQL database response back with fail or success -> RabbitMQServerSample.php -> sends fail or success data back to RabbitMQServer -> 
-  RabbitMQServer sends data back to ->Register.php -> Displays the results.
-
-  The user then go the login page:
-  Ex: 192.168.1.4/Login.html.
-  The user fills out the require information and submits the application.
-
-  The following takes place:
-  Login.html -> Login.php -> sends data to RabbitMQServer -> RabbitMQServer sends data to -> RabbitMQServerSample.php -> 
-  sends data to MYSQL database. MySQL database response back with fail or success -> RabbitMQServerSample.php -> sends fail or success
-  data back to RabbitMQServer -> RabbitMQServer sends data back to -> Register.php -> Displays the results.
+  <ol>
+    <li>The frontEnd folder is downloaded to /var/www/html/ directory on the application virtual machine.</li>
+    <li>The backEnd folder is downloaded to database virtual machine.</li>
+    <li>The RabbitMQ Virtual machine is started and running RabbitMQSever.</li>
+    <li>The RabbitMQServerSample.php is executed (php RabbitMQServerSample.php).</li>
+    <li>Apache webserver is started.</li>
+    <li>The user types the ip address of the Apache Webserver followed by /Register.html .
+      <i>Ex: 192.168.1.4/Register.html</i> .</li>
+    <li>The user fills out the require information and submits the application.</li>
+    <li>The following takes place:<br>
+      <ol>
+        <li>Register.html runs the Register.php script.</li>
+        <li>Register.php sends input data to the RabbitMQ Server.</li>
+        <li>RabbitMQ Server sends data to the RabbitMQServerSample.php script.</li>
+        <li>RabbitMQServerSample.php sends data to the MySQL database.<li>
+        <li>MySQL database responds back to RabbitMQServerSample.php with failure or success.</li>
+        <li>RabbitMQServerSample.php sends failure or success data back to RabbitMQ Server.</li>
+        <li>RabbitMQ Server sends data back to Register.php.</li>
+        <li>Register.php displays the results.</li>
+      </ol>
+    </li>
+    <li>The user then goes to the login page:
+      <i>Ex: 192.168.1.4/Login.html .</i></li>
+    <li>The user fills out the require information and submits the application.</li>
+    <li>
+      <ol>The following takes place:<br>
+        <li>Login.html runs the Login.php script.</li>
+        <li>Login.php sends the input data to the RabbitMQ Server.</li>
+        <li>RabbitMQ Server sends data to the RabbitMQServerSample.php script.</li>
+        <li>RabbitMQServerSample.php sends data to the MYSQL database.</li>
+        <li>The MySQL database responds back to RabbitMQServerSample.php with failure or success.</li>
+        <li>RabbitMQServerSample.php sends failure or success data back to RabbitMQ Server.</li>
+        <li>RabbitMQ Server sends data back to Login.php.</li>
+        <li>Login.php displays the results.</li>
+      </ol>
+    </li>
+  </ol>
 
 <br>What it's supposed to do</br>
-  Display users Facebook, Twitter, Instagram on one page.
+  Display the user's Facebook, Twitter, Instagram on one page.
  
  
-Last Modify: 3/17/2020
+Last Modified: 3/17/2020
 
 
 
