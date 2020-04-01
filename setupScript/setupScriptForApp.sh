@@ -8,9 +8,9 @@ sudo apt install php
 
 sudo apt install php-mbstring
 
-git clone  https://github.com/MattToegel/IT490.git
+cd ~/IT490-2/frontEnd
 
-cd IT490
+git clone  https://github.com/MattToegel/IT490.git
 
 sudo apt install php-mbstring
 
@@ -18,4 +18,4 @@ sudo apt install composer
 
 composer require php-amqplib/php-amqplib
 
-sudo apt install apache
+sudo apt-get install apache2
