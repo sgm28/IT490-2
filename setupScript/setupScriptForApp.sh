@@ -1,21 +1,41 @@
 #!/bin/bash
+#System level
+#sudo apt-get update
 
-sudo apt-get update
+#sudo apt-get upgrade
 
-sudp apt-get upgrade
+#sudo apt install php
 
-sudo apt install php
 
-sudo apt install php-mbstring
+ #Gets the user that is login through ssh when running script	
+ user=$(w -shf)
+ #Tell what the string seprator is.
+ IFS=' '
 
-cd ~/IT490-2/frontEnd
+ read -a details <<< "$user"
+ #Array call details create an array based on sperator
+ #1 user #2pts (session) 
+ sshuser=${details[0]}
+ 
+ echo "Found user: $sshuser"
 
-git clone  https://github.com/MattToegel/IT490.git
 
-sudo apt install php-mbstring
+#cd ~/IT490-2/frontEnd
 
-sudo apt install composer
+#git clone  https://github.com/MattToegel/IT490.git
 
-composer require php-amqplib/php-amqplib
+#sudo apt install php-bcmath
 
-sudo apt-get install apache2
+#sudo chown $sshuser:$sshuser ~/IT490-2/ --recursive
+
+#sudo apt install php-mbstring
+
+#install package
+#sudo apt install composer
+
+#-c for command, install things from the json file as the login user
+#su -c "composer install" - $sshuser
+
+#composer require php-amqplib/php-amqplib
+
+#sudo apt-get install apache2
