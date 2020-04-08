@@ -1,10 +1,10 @@
 #!/bin/bash
 #System level
-#sudo apt-get update
+sudo apt-get update
 
-#sudo apt-get upgrade
+sudo apt-get upgrade
 
-#sudo apt install php
+sudo apt install php
 
 
  #Gets the user that is login through ssh when running script	
@@ -20,22 +20,22 @@
  echo "Found user: $sshuser"
 
 
-#cd ~/IT490-2/frontEnd
+cd ~/IT490-2/frontEnd
 
-#git clone  https://github.com/MattToegel/IT490.git
+git clone  https://github.com/MattToegel/IT490.git
 
-#sudo apt install php-bcmath
+sudo apt install php-bcmath
 
-#sudo chown $sshuser:$sshuser ~/IT490-2/ --recursive
+sudo chown $sshuser:$sshuser ~/IT490-2/ --recursive
 
-#sudo apt install php-mbstring
+sudo apt install php-mbstring
 
 #install package
-#sudo apt install composer
+sudo apt install composer
 
 #-c for command, install things from the json file as the login user
-#su -c "composer install" - $sshuser
+su -c "composer install" - $sshuser
 
-#composer require php-amqplib/php-amqplib
+composer require php-amqplib/php-amqplib
 
-#sudo apt-get install apache2
+sudo apt-get install apache2
