@@ -38,7 +38,7 @@ sudo apt install php-mbstring
 sudo apt install composer
 
 #-c for command, install things from the json file as the login user
-su -c "composer install" - $sshuser
+su -i "composer install" - $sshuser
 
 sudo cp -r ~/IT490-2/frontEnd/vendor ~/IT490-2/frontEnd/IT490/
 
