@@ -40,7 +40,10 @@ sudo apt install composer
 #-c for command, install things from the json file as the login user
 su -i "composer install" - $sshuser
 
-sudo cp -r ~/IT490-2/frontEnd/vendor ~/IT490-2/frontEnd/IT490/
+composer install
+
+
+sudo cp -r ~/IT490-2/frontEnd/vendor/ ~/IT490-2/frontEnd/IT490/
 
 composer require php-amqplib/php-amqplib
 
