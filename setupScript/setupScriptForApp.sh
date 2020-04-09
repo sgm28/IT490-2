@@ -43,11 +43,13 @@ su -c "composer install" - $sshuser
 composer install
 
 #Wait for composer to be install before copying
-sleep 5
+#sleep 5
+
+
+composer require php-amqplib/php-amqplib
 
 sudo cp -r ~/IT490-2/frontEnd/vendor/ ~/IT490-2/frontEnd/IT490/
 
-composer require php-amqplib/php-amqplib
 
 sudo apt-get install apache2
 
