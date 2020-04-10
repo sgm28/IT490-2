@@ -18,7 +18,7 @@ echo $a."\n";
 $myfile = fopen("testRabbitMQ.ini", "w") or die("Unable to open file!");
 
 //Create the text data that will be written to the testRabbitMQ.ini files
-$txt = "BROKER_HOST={$a}\nBROKER_PORT=5672\nUSER={$userName}\nPASSWORD=1\nVHOST=testHost\nEXCHANGE=testExchange\nQUEUE=testQueue\nAUTO_DELETE=true";
+$txt = "BROKER_HOST={$a}\nBROKER_PORT=5672\nUSER={$userName}\nPASSWORD=2\nVHOST=testHost\nEXCHANGE=testExchange\nQUEUE=testQueue\nAUTO_DELETE=true";
 fwrite($myfile,$txt);
 
 
