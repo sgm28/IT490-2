@@ -1,0 +1,37 @@
+<?php
+
+
+//require '/etc/php/7.2/cli/php.ini'
+//require '/etc/php/7.2/apache2/php.ini'
+//https://www.w3schools.com/php/php_mysql_create_table.asp
+$servername = "localhost";
+$username = "it490";
+$password = "teamWork";
+$dbname = "members";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// sql to create table
+$sql = "CREATE TABLE Users (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+firstname VARCHAR(30) NOT NULL,
+lastname VARCHAR(30) NOT NULL,
+email VARCHAR(50),
+password VARCHAR(50),
+dob VARCHAR(50),
+reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+)";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Table MyGuests created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+$conn->close();
+?>
