@@ -18,4 +18,6 @@ sudo apt install composer
 
 composer require php-amqplib/php-amqplib
 
+sudo apt install php-mysqli;
+
 #sudo apt-get install apache2
