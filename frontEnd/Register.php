@@ -6,9 +6,12 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
 ini_set('display_errors' , 1);
 
 //Use for sending messages
-require_once('/home/app-s/IT490/path.inc');
-require_once('/home/app-s/IT490/get_host_info.inc');
-require_once('/home/app-s/IT490/rabbitMQLib.inc');
+$user=get_current_user();
+///var/www/html/IT490-2/frontEnd/IT490
+
+require_once("/var/www/html/IT490-2/frontEnd/IT490/path.inc");
+require_once("/var/www/html/IT490-2/frontEnd/IT490/get_host_info.inc");
+require_once("/var/www/html/IT490-2/frontEnd/IT490/rabbitMQLib.inc");
 //login to database
 //include ("account.php") ;
 

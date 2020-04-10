@@ -17,12 +17,16 @@ sudo apt install php
  #1 user #2pts (session) 
  sshuser=${details[0]}
  
- echo "Found user: $sshuser"
+echo "Found user: $sshuser"
 
 
 cd ~/IT490-2/frontEnd
 
 git clone  https://github.com/MattToegel/IT490.git
+
+cd  /IT490-2/frontEnd/IT490/
+
+#sudo chown $sshuser:$sshuser ~/IT490-2/ frontEnd/IT490/ --recursive
 
 sudo apt install php-bcmath
 
@@ -36,6 +40,17 @@ sudo apt install composer
 #-c for command, install things from the json file as the login user
 su -c "composer install" - $sshuser
 
+composer install
+
+#Wait for composer to be install before copying
+#sleep 5
+
+
 composer require php-amqplib/php-amqplib
 
+sudo cp -r ~/IT490-2/frontEnd/vendor/ ~/IT490-2/frontEnd/IT490/
+
+
 sudo apt-get install apache2
+
+sudo mv  ~/IT490-2/ /var/www/html/
