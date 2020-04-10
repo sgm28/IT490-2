@@ -14,4 +14,4 @@ sudo mysql -u root -p -e "CREATE USER 'it490'@'localhost' IDENTIFIED BY 'teamWor
 
 sudo mysql -u root -p -e "CREATE DATABASE members"
 
-sudo mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'it490'@'localhost'";
+sudo mysql -u root -p -e "GRANT ALL PRIVILEGES ON *.* TO 'it490'@'localhost'";
