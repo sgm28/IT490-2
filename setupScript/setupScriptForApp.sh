@@ -53,4 +53,4 @@ composer require php-amqplib/php-amqplib
 
 sudo apt-get install apache2
 
-#sudo mv  ~/IT490-2/ /var/www/html/
+sudo cp -r  ~/IT490-2/ /var/www/html/
