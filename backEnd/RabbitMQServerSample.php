@@ -9,8 +9,8 @@ function login($user,$pass){
 	//TODO validate user credentials
 	
 $servername = "localhost";
-$username = "root";
-$password = "VeryLongPassword1!";
+$username = "it490";
+$password = "teamWork";
 
 try {
     
@@ -62,7 +62,7 @@ if($count > 0)
                 $message = array("message"=>$myJSON, "type"=>"login responses");
                 error_log(print_r($msg,true));
 
-                return false;
+                return $message;
 
 
 
@@ -70,7 +70,16 @@ if($count > 0)
 }
 else
 {
-	echo "Username or Password is wrong";
+	 $msg = "Username or Password is wrong";
+                $message = new stdClass();
+                $message->Message =$msg;
+                $myJSON = json_encode($message);
+                $message = array("message"=>$myJSON, "type"=>"login responses");
+                error_log(print_r($msg,true));
+
+                return $message;
+
+
 }
 }
 catch(PDOException $e)
@@ -88,8 +97,8 @@ function Register($FirstName,$LastName,$Email,$Password, $DOB){
         //TODO validate user credentials
 
 $servername = "localhost";
-$username = "root";
-$password = "VeryLongPassword1!";
+$username = "it490";
+$password = "teamWork";
 
 try {
 
@@ -163,9 +172,9 @@ $count = $stmt->rowCount();
 if($count > 0)
 	{
 
-       	echo "Successful add row to database";	
+       	//echo "Successful add row to database";	
 	
-	 $msg = "password is correct";
+	 $msg = "Successful add row to database";
                 $message = new stdClass();
                 $message->Message =$msg;
                 $myJSON = json_encode($message);
