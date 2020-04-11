@@ -24,6 +24,5 @@ sudo apt install php-mysqli
 
 sudo rm -r '/etc/php/7.2/cli/php.ini'
 
-sudo cp -r php.ini /etc/php/7.2/cli/
 
 #sudo apt-get install apache2
