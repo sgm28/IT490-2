@@ -4,4 +4,4 @@ myvariable=$(whoami)
 
 cp testRabbitMQ.ini /home/"$myvariable"/IT490-2/frontEnd/IT490
 
-mv testRabbitMQ.ini /var/www/html/IT490-2/frontEnd/IT490/
+sudo mv testRabbitMQ.ini /var/www/html/IT490-2/frontEnd/IT490/
