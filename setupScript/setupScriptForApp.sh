@@ -24,27 +24,27 @@ cd ~/IT490-2/frontEnd
 
 git clone  https://github.com/MattToegel/IT490.git
 
-cd  /IT490-2/frontEnd/IT490/
+cd  ~/IT490-2/frontEnd/IT490/
 
 #sudo chown $sshuser:$sshuser ~/IT490-2/ frontEnd/IT490/ --recursive
 
 
 sudo chown $sshuser:$sshuser ~/IT490-2/ --recursive
 
+
 sudo apt install php-mbstring php-bcmath -y
+
 
 #install package
 sudo apt install composer
 
 #-c for command, install things from the json file as the login user
-#su -c "composer install" - $sshuser
+su -c "composer install" - $sshuser
 
-#sudo composer install
 composer install
 
 #Wait for composer to be install before copying
 #sleep 5
-
 
 composer require php-amqplib/php-amqplib
 
