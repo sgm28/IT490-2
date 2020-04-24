@@ -1,6 +1,6 @@
 <?php
 
-$a = '/../frontEnd/IT490/vendor/autoload.php';
+$a = '/../../apiBackEnd/IT490/vendor/autoload.php';
 echo "the path is: ".$a."\n";
 require_once __DIR__ . "$a";
 
