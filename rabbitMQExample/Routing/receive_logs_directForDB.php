@@ -32,8 +32,11 @@ It is time to tell the exchange to send the message to queue.
 That is called binding
 */
 
+//severity can contain the value of info warning error or all three from the 
+//command line
 $severities = array_slice($argv, 1);
 
+//If severities is empty, spit out a warning and how to use the file
 if(empty($severities))
 {
 
@@ -44,6 +47,7 @@ if(empty($severities))
 
 foreach ($severities as $severity)
 {
+							//severity is the binding key. It is like a key for a queue. It allows the consumer to send to specific queue using it's routing key
 	$channel->queue_bind($queue_name, 'direct_logs', $severity);
 }
 echo "[*] Waiting for logs. To exit press CTRL+C\n";
