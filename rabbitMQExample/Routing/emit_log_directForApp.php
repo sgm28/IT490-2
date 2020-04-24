@@ -26,6 +26,7 @@ $channel->exchange_declare('direct_logs', 'direct', false, false,false);
 
 //Check if the comment argument was past and the value was not empty.
 //If it is empty, assigned the value of info
+//The values for serverity are info, warning, error
 $severity = isset($argv[1]) && !empty($argv[1]) ? $argv[1] : 'info';
 
 
@@ -44,6 +45,9 @@ $msg = new AMQPMessage($data);
 
 
 //Publish message to exhanges name logs
+//$severity is the routing key.
+//It use my the exchange to send it to the correct queue by compairing
+//bind key from php receive_logs_directForDB.php
 $channel->basic_publish($msg, 'direct_logs', $severity);
 
 echo ' [x] Sent ', $data, "\n";
