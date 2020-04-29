@@ -20,10 +20,10 @@ sudo apt install php php-mbstring php-bcmath -y
 sudo apt install composer -y
 
 
-composer install -y
+composer install 
 
-
-composer require php-amqplib/php-amqplib -y
+//Not need because you have the json files 
+//composer require php-amqplib/php-amqplib -y
 
 
 sudo apt install php-mysqli -y
