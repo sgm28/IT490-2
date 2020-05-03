@@ -9,6 +9,7 @@
    $ig = new InstagramApi($params );
    
   ?>
+
    // echo authorization URL
   <a href = "<?php echo $ig->authorizationUrl; ?>" >
      Authorize w/Instagram
