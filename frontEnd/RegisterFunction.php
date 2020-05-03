@@ -7,7 +7,7 @@
 function GET($FirstName, &$flag)
 {
   global $db;
-  $v = $_GET [$FirstName];
+  $v = $_POST[$FirstName];
   $v = trim ($v);
   
   if ($v == "")
