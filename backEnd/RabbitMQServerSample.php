@@ -21,22 +21,17 @@ try {
     echo "Connected successfully";
 
 
-
-
-
 $stmt = $conn->prepare("SELECT FirstName, LastName, Email, Password  FROM `Users`  WHERE FirstName= :FirstName");
 $params = array('FirstName' => $user);
 $stmt->execute($params);
 $count = $stmt->rowCount();
 if($count > 0)
 {
-
 	$result = $stmt->fetch(PDO::FETCH_ASSOC);
 	$userpassword = $result['Password'];
 	if(password_verify($pass, $userpassword))
 	{
 	
-		//echo "password is correct";
 		$msg = "password is correct";
 		$message = new stdClass();
 		$message->Message =$msg;
@@ -46,11 +41,6 @@ if($count > 0)
 
 		return true;
 
-
-	//	"return_code" => '0',
-          //      "message" => "Server received request and processed it");
-		// return array("return_code" => '0',
-            //    "message" => "Server received request and processed it");		
 	}
 	else
 	{
@@ -61,11 +51,7 @@ if($count > 0)
                 $myJSON = json_encode($message);
                 $message = array("message"=>$myJSON, "type"=>"login responses");
                 error_log(print_r($msg,true));
-
                 return $message;
-
-
-
 	}
 }
 else
@@ -78,7 +64,6 @@ else
                 error_log(print_r($msg,true));
 
                 return $message;
-
 
 }
 }
