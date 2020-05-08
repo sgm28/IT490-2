@@ -1,15 +1,26 @@
 <?php
 require_once('config.php');
 
+
+
 if(isset($_SESSION['access_token'])){
 	header("Location: index.php");
 	exit();
 }
 
 
+
+
+
+
+
 $redirectTo = "https://insomnia.surfnet.ca/Facebook-Login-With-PHP-SDK-and-Graph-API-master/callback.php";
 $data = ['email'];
 $fullURL = $handler->getLoginUrl($redirectTo, $data);
+
+
+
+
 ?>
 
 <!DOCTYPE html>
