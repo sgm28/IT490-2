@@ -7,9 +7,13 @@ ini_set('display_errors' , 1);
 
 //Use for sending messages
 
-require_once("/var/www/html/IT490-2/frontEnd/IT490/path.inc");
-require_once("/var/www/html/IT490-2/frontEnd/IT490/get_host_info.inc");
-require_once("/var/www/html/IT490-2/frontEnd/IT490/rabbitMQLib.inc");
+
+
+
+
+require_once("/var/www/insomnia.surfnet.ca/public_html/IT490-2/frontEnd/IT490/path.inc");
+require_once("/var/www/insomnia.surfnet.ca/public_html/IT490-2/frontEnd/IT490/get_host_info.inc");
+require_once("/var/www/insomnia.surfnet.ca/public_html/IT490-2/frontEnd/IT490/rabbitMQLib.inc");
 
 
 //including the Register function file
@@ -19,7 +23,8 @@ include ("RegisterFunction.php");
 
 //Retrieving the user information from the Register.html 
 $flag = false;
-$FirstName = GET ("FirstName", $flag);
+//$_GET["name"]
+$FirstName = GET("FirstName", $flag);
 $LastName = GET ("LastName", $flag);
 $Email = GET ("Email", $flag);
 $Password = GET ("Password", $flag);
@@ -49,7 +54,6 @@ echo "client received response: ". PHP_EOL;
 print_r($response);
 echo "\n\n";
 
-//if(isset($argv[0])) echo $argv[0] . " END".PHP_EOL;  
 
 
 ?>
