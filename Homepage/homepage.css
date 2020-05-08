@@ -1,0 +1,20 @@
+.SocialPlugins {
+
+
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	grid-gap: 25%
+
+}
+
+.image
+{
+
+	float: left;
+}
+
+.NewFeed
+{
+
+	display: inline-block;
+}
