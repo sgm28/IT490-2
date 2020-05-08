@@ -1,0 +1,42 @@
+//<?php
+ //require "InstagramAPI.php";
+//?>
+
+
+<!DOCTYPE html>
+<meta charset = "utf-8" >
+<body background="backg.jpg">
+  <style>
+     form 
+        {
+            width: 35%;
+            background: white ;
+            margin: auto;
+            border: 5px solid black ;
+            border-radius: 15px;
+            box-sizing: border-box;
+            padding: 10px;
+            overflow:auto;
+            
+        }
+  
+  </style>
+
+   
+ 
+  <fieldset>
+   <form action = "InstagramAPI.php" id="myform" onsubmit="return f()"> 
+    <button type="submit"> Login to Instagram </button><br>
+   <input onsubmit="javascript: window.location = '<?php echo $Instagram ->getLoginURL() ?>'
+   </fieldset><br>
+</form><br>
+
+
+
+
+
+
+
+
+</body>
+

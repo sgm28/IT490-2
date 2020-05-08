@@ -1,0 +1,1 @@
+mv testRabbitMQ.ini ../backEnd/
