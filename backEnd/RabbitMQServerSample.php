@@ -5,6 +5,7 @@ require_once('get_host_info.inc');
 require_once('rabbitMQLib.inc');
 ini_set('error_log', 'var/log/php.log');
 ini_set('display_errors',1);
+error_reporting(E_ALL);
 function login($user,$pass) {
 	//TODO validate user credentials
 	
@@ -220,9 +221,30 @@ function request_processor($req){
 		case "Register":
 			$req = json_decode($req['message'],true);
 			return Register($req['firstName'],$req['lastName'],$req['email'], $req['password'], $req['dob']);
+		case "api":
+			
+			//error_log($req['accessToken'], true); 
+			//$msg = array("app_id"=>"$app_id", "app_secret"=>"$app_secret", "accessToken"=>"$accessToken", "authenication"=>$oAuth2Client, "type"=>"api");
+			
+			//return array("return_code"=>'0', "message"=>"Echo: " .$req["message"]);
+			$client = new rabbitMQClient("testRabbitMQApi.ini", "api");
+			$msg = array("app_id"=>$req["app_id"],"app_secret"=>$req["app_secret"],"accessToken"=>$req["accessToken"], "authenication"=>$req["authenication"], "type"=>"api");
+			//$msg = array("message"=>"$app_id", "message2"=>"$app_secret", "message3"=>"$accessToken", "message4"=>"$oAuth2Client", "type"=>"api");
+			//$respone = $client->send_request($msg);
+			
+			$response = $client->send_request($msg);
+			//I/////echo "Response is: ";
+			//echo vaI///r_export($response);
+			//echo "\n";
+
+
+			error_log("Response is". var_export($response,true));
+
+			return array("return_code" => '0', "message" =>"returning data from db", "userData"=>$response);
 	}
 	return array("return_code" => '0',
 		"message" => "Server received request and processed it");
+		
 }
 
 $server = new rabbitMQServer("testRabbitMQ.ini", "sampleServer");
