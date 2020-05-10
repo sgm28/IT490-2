@@ -1,0 +1,5 @@
+cat file.txt     #make sure its concatenated
+logger -f file.txt       
+tail /var/log/messages 
+
+ls /etc/rsyslog.d/ #view your logs 

@@ -1,0 +1,9 @@
+#Kamal (Revert Script)
+
+mv old-name new-name
+mv [options] old-name new-name
+mv [options] source target
+
+pwd
+ls -l
+mv test5.backup test5
