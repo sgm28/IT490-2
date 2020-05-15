@@ -116,6 +116,8 @@ try {
 			$message->Message =$msg;
 			$myJSON = json_encode($message);
 			$message = array("message"=>$myJSON, "type"=>"Register responses");
+			
+			$message = array("message"=>$msg, "type"=>"Register responses");
 			error_log(print_r($msg,true));
 
 			return $message;
@@ -164,13 +166,91 @@ catch(PDOException $e)
 
 
 
-        return true;
+
+
+
 }
 
 
+function resetPassword($userName)
+{
 
 
 
+
+
+	try {
+		$servername = "localhost";
+	        $username = "it490";
+        	$password = "teamWork";
+
+
+		global $conn;
+	       $conn= new PDO("mysql:host=$servername;dbname=members", $username, $password);
+
+    		// set the PDO error mode to exception
+    		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		echo "Connected successfully";
+
+
+
+
+		$stmt = $conn->prepare("SELECT FirstName, Password  FROM `Users`  WHERE FirstName= :FirstName");
+		$params = array('FirstName' => $userName);
+		$stmt->execute($params);
+		$count = $stmt->rowCount();
+		if($count > 0)
+		{
+        		$result = $stmt->fetch(PDO::FETCH_ASSOC);
+			$userpassword = $result['Password'];
+
+			$hashPassword =  password_hash(1, PASSWORD_BCRYPT);
+
+			$stmt = $conn->prepare("UPDATE `Users` SET Password=:Password WHERE FirstName= :FirstName");
+			$params = array('FirstName'=> $userName, 'Password'=>$hashPassword);
+
+			$stmt->execute($params);
+			$count = $stmt->rowCount();
+			if($count > 0)
+			{
+				        echo "Password reset successfully";
+				        $msg = "Password reset successfully.";
+                                       // $message = new stdClass();
+             	                           //$message->Message =$msg;
+                                        //$myJSON = json_encode($message);
+                                        $message = array("message"=>$msg, "type"=>"PasswordReset");
+                                        error_log(print_r($msg,true));
+
+					return $message;
+			}
+			else
+			{
+				echo "Password not reset successfully";
+				$msg = "Password not reset successfully";
+				$message = array("message"=>$msg, "type"=>"PasswordReset");
+				return $message;
+			}
+		}
+		else
+		{
+				echo "Username doesnt't exist";
+                                $msg = "Username doesn't exist";
+                                $message = array("message"=>$msg, "type"=>"PasswordReset");
+                                return $message;
+		
+		}
+
+
+   	   }
+
+	catch(PDOException $e)
+	{	
+        	echo "Connection failed " . $e->getMessage();
+	}
+
+
+
+}
 
 
 
@@ -220,6 +300,17 @@ function request_processor($req){
 		case "Register":
 			$req = json_decode($req['message'],true);
 			return Register($req['firstName'],$req['lastName'],$req['email'], $req['password'], $req['dob']);
+	
+	
+		case "api":
+			//Sending over to API
+			$client = new rabbitMQClient("testRabbitMQApi.ini", "api");
+			$msg = array("app_id"=>$req["app_id"],"app_secret"=>$req["app_secret"],"accessToken"=>$req["accessToken"], "type"=>"api");
+			$response = $client->send_request($msg);
+			return $response;
+	
+		case "PasswordReset":
+		       return resetPassword($req['message']);
 	}
 	return array("return_code" => '0',
 		"message" => "Server received request and processed it");
