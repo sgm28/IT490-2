@@ -1,0 +1,7 @@
+# Kamal (backup scripts)
+
+#!/bin/bash 
+backuptime=`date +%b-%d-%y` 
+destination=/home/usr/path/backup-$backuptime.tar.gz 
+soruce=/home/usr/path/data_folder 
+tar -cpzf $destination $source

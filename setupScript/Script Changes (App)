@@ -1,0 +1,5 @@
+#Kamal (Script changes)
+
+#cp file1 file2
+
+cp doc1.txt doc2.txt

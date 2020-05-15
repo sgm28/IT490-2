@@ -16,7 +16,7 @@ if(!isset($_SESSION['access_token'])){
 	<title>My profile</title>
 </head>
 <body>
-	
+<p><?php var_dump($_SESSION['userData']); ?> </p>	
 <div class="container" style="margin-top: 100px">
 	<div class="row justify-content-center">
 		<div class="col-md-3">
